@@ -63,6 +63,10 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                              @if(UserLib::isAdmin(Auth::user()->id) == 4)
+                                <li><a href="{{ url('/admin' )}}"><i class"fa fa/btn fa-user"></i>Admin</li>
+                              @endif
+                                <li><a href="{{ url('/profile' )}}"><i class"fa fa/btn fa-user"></i>Profile</li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
