@@ -33,7 +33,12 @@ class HomeController extends Controller
 
     public function admin() {
       if(UserLib::isAdmin(Auth::user()->id)){
-        return view('admin', ['categories' => Forum::getCategories(), 'forums' => Forum::getForums()]);
+        $categories = Forum::getCategories();
+        $catName = [];
+        foreach($categories as $category) {
+          $catName["$category->id"] = $category->name;
+        }
+        return view('admin', ['catNames' => $catName, 'categories' => $categories, 'forums' => Forum::getForums()]);
       } else {
         return view('home');
       }

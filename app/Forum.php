@@ -7,6 +7,10 @@ use DB;
 class Forum extends Model
 {
     //
+    protected $fillable = [
+        'name', 'desc', 'type', 'cat_id', 'parent_id'
+    ];
+
     public static function getCategories() {
       return DB::table('forums')->where('type', 1)->get();
     }
@@ -29,7 +33,8 @@ class Forum extends Model
         'name' => $forum_name,
         'desc' => $forum_desc,
         'cat_id' => $cat_id,
-        'parent_id' => $parent
+        'parent_id' => $parent,
+        'type' => 0
       ]);
     }
   }

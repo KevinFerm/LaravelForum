@@ -17,7 +17,7 @@ class CreateForumsTable extends Migration
             $table->integer('parent_id');
             $table->string('name');
             $table->string('desc');
-            $table->integer('type');
+            $table->integer('type')->default(0);
             $table->integer('posts');
             $table->integer('topics');
             $table->timestamps();

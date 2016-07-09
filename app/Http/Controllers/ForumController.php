@@ -11,23 +11,26 @@ use App\Http\Requests;
 class ForumController extends Controller
 {
     //
-    public function addCategory($array) {
-      return Forum::create([
-        'name' => $request->input('name'),
-        'desc' => $request->input('desc'),
-        'type' => $request->input('type')
-      ]);
-    }
 
-    public function add(Request $request) {
-      if($request->input('type')) {
+    public function addCategory(Request $request) {
+      if($request->input('type') == 1) {
         Forum::addCategory(
           $request->input('name'),
           $request->input('desc')
         );
         return redirect('/admin');
       } else {
-        return false;
+
       }
+    }
+
+    public function addForum(Request $request) {
+      Forum::addCategory(
+      $request->input('name'),
+      $request->input('desc').
+      $request->input('category'),
+      $request->input('parent')
+    );
+    return redirect('/admin');
     }
 }

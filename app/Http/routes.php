@@ -19,4 +19,5 @@ Route::auth();
 
 Route::get('/profile', 'HomeController@index');
 Route::get('/admin', 'HomeController@admin');
-Route::post('forum/add', 'ForumController@add');
+Route::post('forum/addcat', 'ForumController@addCategory');
+Route::post('forum/addforum', 'ForumController@addForum');
