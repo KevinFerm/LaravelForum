@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/profile', 'HomeController@index');
+Route::get('/admin', 'HomeController@admin');
+Route::post('forum/add', 'ForumController@add');
