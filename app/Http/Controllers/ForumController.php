@@ -13,10 +13,11 @@ class ForumController extends Controller
     //
 
     public function addCategory(Request $request) {
-      if($request->input('type') == 1) {
+      if($request->input('cat_type') == 1) {
         Forum::addCategory(
-          $request->input('name'),
-          $request->input('desc')
+          $request->input('cat_name'),
+          $request->input('cat_desc'),
+          $request->input('cat_type')
         );
         return redirect('/admin');
       } else {
@@ -25,12 +26,13 @@ class ForumController extends Controller
     }
 
     public function addForum(Request $request) {
-      Forum::addCategory(
+      Forum::addForum(
       $request->input('name'),
-      $request->input('desc').
-      $request->input('category'),
+      $request->input('desc'),
+      intval($request->input('category')),
       $request->input('parent')
     );
+    //echo $request->input('category');
     return redirect('/admin');
     }
 }

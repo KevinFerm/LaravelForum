@@ -14,7 +14,7 @@ class AddToForumsTable extends Migration
     {
         Schema::table('forums', function (Blueprint $table) {
             //
-            $table->integer('cat_id');
+            $table->integer('cat_id')->default(0);
         });
     }
 

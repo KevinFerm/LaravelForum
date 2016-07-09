@@ -6,10 +6,10 @@
 <h2>Add new Category</h2>
   {!! Form::open(array('url' => 'forum/addcat')) !!}
   {{ Form::label('name', 'Name') }}
-  {{ Form::text('name', null, ['class' => 'form-control']) }}
+  {{ Form::text('cat_name', null, ['class' => 'form-control']) }}
   {{ Form::label('desc', 'Description') }}
-  {{ Form::text('desc', null, ['class' => 'form-control']) }}
-  {{ Form::hidden('type', 1) }}
+  {{ Form::text('cat_desc', null, ['class' => 'form-control']) }}
+  {{ Form::hidden('cat_type', 1) }}
   {{ Form::submit('Add Category') }}
   {!! Form::close() !!}
   <h2>Categories</h2>
@@ -19,6 +19,7 @@
   <h2>Add new Forum</h2>
   @if($catNames)
     {!! Form::open(array('url' => 'forum/addforum')) !!}
+    {{ Form::token() }} 
     {{ Form::label('name', 'Name') }}
     {{ Form::text('name', null, ['class' => 'form-control']) }}
     {{ Form::label('desc', 'Description') }}

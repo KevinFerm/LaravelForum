@@ -19,11 +19,11 @@ class Forum extends Model
         return DB::table('forums')->where([['type', 0], ['cat_id', $cat_id]])->get();
     }
 
-    public static function addCategory($cat_name, $cat_desc) {
+    public static function addCategory($cat_name, $cat_desc, $cat_type) {
       return DB::table('forums')->insert([
         'name' => $cat_name,
         'desc' => $cat_desc,
-        'type' => 1
+        'type' => $cat_type
       ]);
     }
 
@@ -32,8 +32,8 @@ class Forum extends Model
       return DB::table('forums')->insert([
         'name' => $forum_name,
         'desc' => $forum_desc,
-        'cat_id' => $cat_id,
-        'parent_id' => $parent,
+        'cat_id' => intval($cat_id),
+        'parent_id' => intval($parent),
         'type' => 0
       ]);
     }
