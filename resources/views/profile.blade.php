@@ -9,6 +9,10 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    {{Auth::user()->type}}
+                    @if(UserLib::isAdmin(Auth::user()->id))
+                      You are admin!
+                    @endif
                 </div>
             </div>
         </div>
