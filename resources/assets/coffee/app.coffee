@@ -5,9 +5,14 @@ loadCats = ->
     $('.categories_show').append(data)
     console.log("Appended data")
 $ ->
-  console.log("Dom Ready")
+  ###############################
+  ########FOR ADMIN PAGE#########
+  ###############################
+
+  #Load category partial on dom ready / only on admin page
   if('.categories_show')
     loadCats()
+
   $(document).on "click", ".cat_del", (event) ->
     $.ajax '/forum/deleteforum',
       type: 'DELETE'
