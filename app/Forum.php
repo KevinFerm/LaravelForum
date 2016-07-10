@@ -48,6 +48,7 @@ class Forum extends Model
   }
 
   public static function deleteForum($forum_id) {
+    echo $forum_id;
     return DB::table('forums')->where('id', $forum_id)->delete();
   }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Forum;
 use App\User;
+use App\libs\userlib;
 use Auth;
 use App\Http\Requests;
 
@@ -40,14 +41,14 @@ class ForumController extends Controller
     //Deletes a forum
     public function deleteForum(Request $request) {
       if(!UserLib::isAdmin(Auth::user()->id))
-        return false
+        return 33;
       return Forum::deleteForum($request->input('forum_id'));
     }
 
     //Changes name of a forum
     public function changeName(Request $request) {
       if(!UserLib::isAdmin(Auth::user()->id))
-        return false
+        return false;
       return Form::changeName($request->input('id'),$request->input('name'));
     }
 
@@ -55,7 +56,7 @@ class ForumController extends Controller
     //cat_id is the new category id
     public function changeCat(Request $request) {
       if(!UserLib::isAdmin(Auth::user()->id))
-        return false
+        return false;
       return Form::changeCat($request->input('forum_id'), $request->input('cat_id'));
     }
 }
