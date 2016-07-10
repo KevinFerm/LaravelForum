@@ -10,8 +10,7 @@ use App\Http\Requests;
 
 class ForumController extends Controller
 {
-    //
-
+    //Adds a category
     public function addCategory(Request $request) {
       if($request->input('cat_type') == 1) {
         Forum::addCategory(
@@ -25,6 +24,7 @@ class ForumController extends Controller
       }
     }
 
+    //Adds a forum
     public function addForum(Request $request) {
       Forum::addForum(
       $request->input('name'),
@@ -34,5 +34,21 @@ class ForumController extends Controller
     );
     //echo $request->input('category');
     return redirect('/admin');
+    }
+
+    //Deletes a forum
+    public function deleteForum(Request $request) {
+      Forum::deleteForum($request->input('forum_id'));
+    }
+
+    //Changes name of a forum
+    public function changeName(Request $request) {
+      Form::changeName($request->input('id'),$request->input('name'));
+    }
+
+    //Changes category of a forum
+    //cat_id is the new category id
+    public function changeCat(Request $request) {
+      Form::changeCat($request->input('forum_id'), $request->input('cat_id'));
     }
 }

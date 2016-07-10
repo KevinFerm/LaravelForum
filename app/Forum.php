@@ -51,10 +51,6 @@ class Forum extends Model
     return DB::table('forums')->where('id', $forum_id)->delete();
   }
 
-  public static function deleteCat($cat_id) {
-    return DB::table('forums')->where([['id', $cat_id],['type', 1]])->delete();
-  }
-
   public static function changeCat($forum_id, $cat_id) {
     return DB::table('forums')->where('id', $forum_id)->update(['cat_id' => $cat_id]);
   }
