@@ -6,7 +6,8 @@ loadCats = ->
     console.log("Appended data")
 $ ->
   console.log("Dom Ready")
-  loadCats()
+  if('.categories_show')
+    loadCats()
   $(document).on "click", ".cat_del", (event) ->
     $.ajax '/forum/deleteforum',
       type: 'DELETE'
@@ -15,7 +16,6 @@ $ ->
       error: (jqXHR, textStatus, errorThrown) ->
         console.log(textStatus)
       success: (data, textStatus, jqXHR) ->
-        $('body').append "Deleted"
         loadCats()
     console.log(event.target.id.split("_")[2])
 
@@ -27,7 +27,6 @@ $ ->
       error: (jqXHR, textStatus, errorThrown) ->
         console.log(textStatus)
       success: (data, textStatus, jqXHR) ->
-        $('body').append "Deleted"
         loadCats()
     console.log(event.target.id.split("_")[2])
 
@@ -39,6 +38,5 @@ $ ->
       error: (jqXHR, textStatus, errorThrown) ->
       #console.log(textStatus)
       success: (data, textStatus, jqXHR) ->
-        $('body').append "Deleted"
         loadCats()
     console.log(event.target.value)
