@@ -16,7 +16,11 @@ class Forum extends Model
     }
 
     public static function getForums($cat_id=0) {
-        return DB::table('forums')->where([['type', 0], ['cat_id', $cat_id]])->get();
+      if($cat_id==0)
+        return DB::table('forums')->where([['type', 0]])->get();
+
+      return DB::table('forums')->where([['type', 0], ['cat_id', $cat_id]])->get();
+
     }
 
     public static function addCategory($cat_name, $cat_desc, $cat_type) {

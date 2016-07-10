@@ -19,7 +19,7 @@
   <h2>Add new Forum</h2>
   @if($catNames)
     {!! Form::open(array('url' => 'forum/addforum')) !!}
-    {{ Form::token() }} 
+    {{ Form::token() }}
     {{ Form::label('name', 'Name') }}
     {{ Form::text('name', null, ['class' => 'form-control']) }}
     {{ Form::label('desc', 'Description') }}
@@ -32,7 +32,7 @@
   @endif
   <h2>Forums</h2>
   @foreach($forums as $forum)
-    {{$category->name}} <br>
+    {{$forum->name}} <br>
   @endforeach
 
   <h2>Users</h2>
