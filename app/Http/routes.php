@@ -21,6 +21,7 @@ Route::get('/profile', 'HomeController@index');
 Route::get('/admin', 'HomeController@admin');
 
 //CRUD Operations for Forums
+
 Route::post('forum/addcat', 'ForumController@addCategory');
 Route::post('forum/addforum', 'ForumController@addForum');
 Route::delete('forum/deleteforum', 'ForumController@deleteForum');
