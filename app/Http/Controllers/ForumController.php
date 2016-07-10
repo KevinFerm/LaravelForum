@@ -38,6 +38,18 @@ class ForumController extends Controller
     return redirect('/admin');
     }
 
+    public function getCategories() {
+      if(UserLib::isAdmin(Auth::user()->id)){
+        $categories = Forum::getCategories();
+        $catName = [];
+        foreach($categories as $category) {
+          $catName["$category->id"] = $category->name;
+        }
+        return (string) view('partials/_admin_categories', ['catNames' => $catName, 'categories' => $categories, 'forums' => Forum::getForums()]);
+      } else {
+        return view('home');
+      }
+    }
     //Deletes a forum
     public function deleteForum(Request $request) {
       if(!UserLib::isAdmin(Auth::user()->id))
