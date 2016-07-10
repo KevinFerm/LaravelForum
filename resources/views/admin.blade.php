@@ -14,7 +14,14 @@
   {!! Form::close() !!}
   <h2>Categories</h2>
   @foreach($categories as $category)
-    {{$category->name}} <br>
+    <h3>{{$category->name}}  {{Form::button('Delete Cat', ['id' => 'cat_del_'.$category->id, 'class' => 'cat_del btn btn-danger'])}}</h3> <br>
+    @foreach($forums as $forum)
+      @if($forum->cat_id == $category->id)
+        {{$forum->name}}
+        {{Form::select('change_cat', $catNames,null, ['id' =>'change_cat_'.$forum->id, 'class' => 'change_cat form_control']) }}
+        {{Form::button('Delete', ['id' => 'forum_del_'.$forum->id, 'class' => 'forum_del btn btn-danger'])}}
+      @endif
+    @endforeach
   @endforeach
   <h2>Add new Forum</h2>
   @if($catNames)
