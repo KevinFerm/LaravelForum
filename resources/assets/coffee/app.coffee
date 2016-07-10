@@ -21,3 +21,14 @@ $ ->
       success: (data, textStatus, jqXHR) ->
         $('body').append "Deleted"
     console.log(event.target.id.split("_")[2])
+
+  $('.change_cat').on "change", (event) ->
+    $.ajax '/forum/changecat',
+      type: 'PATCH'
+      headers: {'X-CSRF-TOKEN': $('input[name=_token]').val()}
+      data: {forum_id: event.target.id.split("_")[2], cat_id: event.target.value}
+      error: (jqXHR, textStatus, errorThrown) ->
+      #console.log(textStatus)
+      success: (data, textStatus, jqXHR) ->
+      $('body').append "Deleted"
+    console.log(event.target.value)

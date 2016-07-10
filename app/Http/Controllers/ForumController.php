@@ -57,6 +57,6 @@ class ForumController extends Controller
     public function changeCat(Request $request) {
       if(!UserLib::isAdmin(Auth::user()->id))
         return false;
-      return Form::changeCat($request->input('forum_id'), $request->input('cat_id'));
+      return Forum::changeCat($request->input('forum_id'), $request->input('cat_id'));
     }
 }
