@@ -43,4 +43,20 @@ class Forum extends Model
     }
   }
 
+  public static function changeName($id, $name) {
+    return DB::table('forums')->where('id', $id)->update(['name' => $name]);
+  }
+
+  public static function deleteForum($forum_id) {
+    return DB::table('forums')->where('id', $forum_id)->delete();
+  }
+
+  public static function deleteCat($cat_id) {
+    return DB::table('forums')->where([['id', $cat_id],['type', 1]])->delete();
+  }
+
+  public static function changeCat($forum_id, $cat_id) {
+    return DB::table('forums')->where('id', $forum_id)->update(['cat_id' => $cat_id]);
+  }
+
 }
