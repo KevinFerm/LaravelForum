@@ -31,6 +31,10 @@ class Forum extends Model
       ]);
     }
 
+    public static function getForumById($id) {
+      return DB::table('forums')->where('id', $id)->get();
+    }
+
     public static function addForum($forum_name, $forum_desc, $cat_id, $parent=0){
     if($parent == 0) {
       return DB::table('forums')->insert([

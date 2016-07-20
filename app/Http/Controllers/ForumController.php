@@ -16,6 +16,15 @@ class ForumController extends Controller
   public function index() {
     return view('forums/index', ['categories' => Forum::getCategories(), 'forums' => Forum::getForums()]);
   }
+
+  public function viewForum($slug) {
+    $id = explode("-", $slug);
+    $id = $id[1];
+    $forum = Forum::getForumById($id);
+    //return $forum[0]->id;
+    $cat = Forum::getForumById($forum[0]->cat_id);
+    return view('forums/category', ['id' => $id, 'category' => $cat, 'forum' => $forum[0]]);
+  }
     //Adds a category
     public function addCategory(Request $request) {
       if($request->input('cat_type') == 1) {
