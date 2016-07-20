@@ -12,6 +12,10 @@ use App\Http\Requests;
 
 class ForumController extends Controller
 {
+
+  public function index() {
+    return view('forums/index', ['categories' => Forum::getCategories(), 'forums' => Forum::getForums()]);
+  }
     //Adds a category
     public function addCategory(Request $request) {
       if($request->input('cat_type') == 1) {
@@ -47,7 +51,7 @@ class ForumController extends Controller
         }
         return (string) view('partials/_admin_categories', ['catNames' => $catName, 'categories' => $categories, 'forums' => Forum::getForums()]);
       } else {
-        return view('home');
+        return view('forums/index');
       }
     }
     //Deletes a forum

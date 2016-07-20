@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', 'ForumController@index');
 Route::auth();
 
 Route::get('/profile', 'HomeController@index');
