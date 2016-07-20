@@ -1,96 +1,135 @@
-//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
-body{margin-top:20px;}
-
-.responsive-tabs {
-  margin-top:20px;
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
-.responsive-tabs-container .tab-content {
-  padding:10px 20px;
-  border:1px solid #ddd;
-  border-top:none;
+@media (min-width: 768px) {
+	body {
+		font-family: "OpenSans", Helvetica, Tahoma, Arial, sans-serif;
+		background: #00020F;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		font-size: 14px;
+	}
+
 }
 
-.responsive-tabs-container[class*="accordion-"] .tab-pane {
-  margin-bottom: 15px;
+@media (max-width: 768px) {
+	body {
+		font-family: "OpenSans", Helvetica, Tahoma, Arial, sans-serif;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: auto !important;
+		min-width: 600px;
+		font-size: 14px;
+	}
+
 }
 
-.responsive-tabs-container[class*="accordion-"] .accordion-link {
-  display: none;
-  margin-bottom: 10px;
-  padding: 10px 15px;
-  background-color: #f5f5f5;
-  border-radius: 3px;
-  border: 1px solid #ddd;
-  color: #333;
-}
-
-.responsive-tabs-container[class*="accordion-"] .accordion-link.active {
-    border-bottom: medium none;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    color: #ff6600;
-}
-
-@media (max-width: 767px) {
-  .responsive-tabs-container.accordion-xs .nav-tabs {
-    display: none;
+@media (max-width: 992px) {
+  .sm-gap {
+    padding-right: 10px !important;
   }
-
-  .responsive-tabs-container.accordion-xs .accordion-link {
-    display: block;
-  }
-
-  .responsive-tabs-container[class*="accordion-"] .tab-pane {
-    border:1px solid #ddd;
-    border-top:none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-width: medium 1px 1px;
-    margin-bottom: 10px;
-    margin-top: -10px;
-    padding: 10px 10px 0;
- }
 }
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .responsive-tabs-container.accordion-sm .nav-tabs {
-    display: none;
-  }
-
-  .responsive-tabs-container.accordion-sm .accordion-link {
-    display: block;
-  }
-
-  .responsive-tabs-container[class*="accordion-"] .tab-pane {
-    border:1px solid #ddd;
-    border-top:none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-width: medium 1px 1px;
-    margin-bottom: 10px;
-    margin-top: -10px;
-    padding: 10px 10px 0;
- }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  .responsive-tabs-container.accordion-md .nav-tabs {
-    display: none;
-  }
-
-  .responsive-tabs-container.accordion-md .accordion-link {
-    display: block;
+@media (max-width: 768px) {
+  .sm-gap {
+    padding-right: 0px !important;
   }
 }
 
-@media (min-width: 1200px) {
-  .responsive-tabs-container.accordion-lg .nav-tabs {
-    display: none;
-  }
 
-  .responsive-tabs-container.accordion-lg .accordion-link {
-    display: block;
-  }
+a:link, a:visited, a:active {
+	color: #22464D;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover {
+	color: #142A2F;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+.topbar a:link, .topbar a:visited, .topbar a:active {
+	color: #A5CBCC;
+	text-decoration: none;
+}
+.topbar a:hover {
+	color: #fff;
+}
+
+
+
+.mainmenu {
+	background: #45595A;
+	color: #fff;
+	padding: 8px 15px;
+	font-size: 13px;
+}
+.topbar {
+	background: #45595A;
+	color: #fff;
+	padding: 8px 15px;
+	font-size: 13px;
+}
+
+ul.toplinks {
+	float: right;
+	list-style: none;
+	display: block;
+	margin: 0;
+}
+.toplinks li {
+	float: left;
+	padding: 0 30px 0 0;
+}
+
+
+
+/*
+	Text Styling and Floats
+*/
+.aleft {
+	text-align: left;
+}
+.aright {
+	text-align: right;
+}
+.center {
+	text-align: center;
+}
+.floatleft {
+	float: left;
+}
+.floatright {
+	float: right;
+}
+.auto {
+	margin: 0 auto;
+}
+.large {
+	font-size: 16px;
+}
+.xlarge {
+	font-size: 18px;
+}
+.small {
+	font-size: 12px;
+}
+.xsmall {
+	font-size: 11px;
+}
+.white {
+	color: #fff;
+}
+.b {
+	font-weight: bold;
+}
+.clear {
+	clear: both;
+}
+.welcomeback {
+	min-width: 150px;
+	max-width: 400px;
+	float: left;
 }

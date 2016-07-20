@@ -25,7 +25,22 @@
         }
     </style>
 </head>
+
+
 <body id="app-layout">
+  <div class="container topbar">
+  				<div class="hidden-xs welcomeback">Welcome back, <a href="/territory.php">Player</a>!</div>
+  		<ul class="toplinks">
+  			<li><a href="http://lioden.com/inbox.php">Messages</a></li>
+  			<li><a href="/spend-history.php?type=sb"><img src="//static.lioden.com/img/layout/icon-beetle-silver.png" class="icon" />123456</a></li>
+  			<li><a href="/spend-history.php?type=gb"><img src="//static.lioden.com/img/layout/icon-beetle-gold.png" class="icon" />1234</a></li>
+  			<li class="visible-lg visible-md visible-sm"><a href="/journal.php">Journal</a></li>
+  			<li><a href="http://lioden.com/modbox.php">Modbox & Helper Hub 			</a></li>
+  			<li class="visible-lg visible-md visible-sm"><a href="http://lioden.wikispaces.com/">Wiki</a></li>
+  			<li><a href="/logout.php" onClick="return confirm('Are you sure you want to logout?')">Logout</a></li>
+  		</ul>
+  			</div>
+<br><br>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
