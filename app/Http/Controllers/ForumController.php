@@ -19,7 +19,7 @@ class ForumController extends Controller
 
   public function viewForum($slug) {
     $id = explode("-", $slug);
-    $id = $id[1];
+    $id = $id[0];
     $forum = Forum::getForumById($id);
     //return $forum[0]->id;
     $cat = Forum::getForumById($forum[0]->cat_id);
