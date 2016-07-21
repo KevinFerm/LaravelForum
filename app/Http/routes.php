@@ -19,6 +19,8 @@ Route::get('/profile', 'HomeController@index');
 Route::get('/admin', 'HomeController@admin');
 
 Route::get('/forum/{slug}', 'ForumController@viewForum');
+Route::get('/forum/topic/new/{id}', 'TopicController@newTopic');
+Route::post('/forum/topic/new/{id}', 'TopicControlelr@createTopic');
 
 //CRUD Operations for Forums
 Route::post('forum/addcat', 'ForumController@addCategory');
@@ -26,6 +28,9 @@ Route::post('forum/addforum', 'ForumController@addForum');
 Route::delete('forum/deleteforum', 'ForumController@deleteForum');
 Route::patch('forum/changename', 'ForumController@changeName');
 Route::patch('forum/changecat', 'ForumController@changeCat');
+
+//CRUD Operations for topics
+Route::delete('forum/topic/delete/{id}', 'TopicController@delTopic');
 
 //Partials for AJAX Updating
 Route::get('/forum/getcats', 'ForumController@getCategories');

@@ -13,7 +13,6 @@
   </div>
   <p class="lead">This is the right place to discuss any ideas, critics, feature requests and all the ideas regarding our website. Please follow the forum rules and always check FAQ before posting to prevent duplicate posts.</p>
   @foreach($categories as $category)
-    {{$category->id}}
     <table class="table forum table-striped">
       <thead>
         <tr>
