@@ -18,7 +18,7 @@ Route::auth();
 Route::get('/profile', 'HomeController@index');
 Route::get('/admin', 'HomeController@admin');
 
-Route::get('/forum/{slug}', 'ForumController@viewForum');
+Route::get('/forum/show/{slug}', 'ForumController@viewForum');
 
 //Topics
 Route::get('/forum/topic/new/{id}', 'TopicController@newTopic');
