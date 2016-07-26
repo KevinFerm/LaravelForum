@@ -22,7 +22,7 @@ Route::get('/forum/show/{slug}', 'ForumController@viewForum');
 
 //Topics
 Route::get('/forum/topic/new/{forum_id}', 'TopicController@newTopic');
-Route::post('/forum/topic/new', 'TopicControlelr@createTopic');
+Route::post('/forum/topic/new', 'TopicController@createTopic');
 Route::get('/forum/topic/{slug}', 'TopicController@viewTopic');
 Route::delete('forum/topic/delete/{id}', 'TopicController@deleteTopic');
 Route::patch('forum/topic/edit/{id}', 'TopicController@editTopic');

@@ -26,8 +26,6 @@ class AddForeignKeys extends Migration
 
         $table->foreign('poster_id')->references('id')->on('users');
 
-        $table->foreign('first_post_id')->references('id')->on('posts');
-
 
       });
     }
