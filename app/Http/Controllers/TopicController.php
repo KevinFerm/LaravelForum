@@ -10,6 +10,17 @@ class TopicController extends Controller
 {
     //
     public function viewTopic() {
-      return view('/topics/view.blade.php');
+      return view('/topics/topic');
     }
+
+    public function newTopic($forum_id) {
+      return view('/topics/create', ['forum_id' => $forum_id]);
+    }
+
+    public function createTopic() {}
+
+    public function deleteTopic() {}
+
+    public function editTopic() {}
+
 }

@@ -28,4 +28,16 @@ class Topic extends Model
         'status' => 0
       ]);
     }
+
+    public static function deleteTopic($topic_id) {
+      return DB::table('topics')->where('id', $topic_id);
+    }
+
+    public static function editTopic($topic_id, $title, $forum_id=0) {
+      if($forum_id == 0) {
+        return DB::table('topics')->where('id', $topic_id)->update(['title' => $title]);
+      } else {
+        return DB::table('topics')->where('id', $topic_id)->update(['title' => $title,'forum_id' => $forum_id]);
+      }
+    }
 }

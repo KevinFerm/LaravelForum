@@ -9,6 +9,11 @@ $ ->
   ########FOR ADMIN PAGE#########
   ###############################
 
+  $("#summernote").summernote({
+    height: 300
+    width: 500
+    })
+
   #Load category partial on dom ready / only on admin page
   if('.categories_show')
     loadCats()

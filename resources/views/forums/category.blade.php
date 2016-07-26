@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container">
-  hej
+  <a href="/forum/topic/new/{{$id}}">{{Form::button('New Topic')}}</a>
+
 </div>
 @endsection
