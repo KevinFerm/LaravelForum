@@ -22,7 +22,7 @@
           </th>
           <th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
           <th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
-          <th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>>
+          <th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
         </tr>
       </thead>
       <tbody>

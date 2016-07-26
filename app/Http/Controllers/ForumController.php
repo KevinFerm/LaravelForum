@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Forum;
 use App\User;
+use App\Topic;
 use App\libs\userlib;
 use Auth;
 use App\Http\Requests;
@@ -22,8 +23,9 @@ class ForumController extends Controller
     $id = $id[0];
     $forum = Forum::getForumById($id);
     if(isset($forum[0])) {
+      $topics = Topic::getTopics($id);
       $cat = Forum::getForumById($forum[0]->cat_id);
-      return view('forums/category', ['id' => $id, 'category' => $cat, 'forum' => $forum[0]]);
+      return view('forums/category', ['id' => $id, 'topics' => $topics, 'category' => $cat, 'forum' => $forum[0]]);
     }
   }
     //Adds a category
