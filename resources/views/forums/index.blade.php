@@ -31,7 +31,7 @@
             <tr>
               <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
               <td>
-                <h4><a href="/forum/{{$forum->id}}-{{str_slug($forum->name, "-")}}">{{$forum->name}}</a><br><small>{{$forum->desc}}</small>
+                <h4><a href="/forum/show/{{$forum->id}}-{{str_slug($forum->name, "-")}}">{{$forum->name}}</a><br><small>{{$forum->desc}}</small>
                   <td class="text-center hidden-xs hidden-sm"><a href="#">{{$forum->topics}}</a></td>
                   <td class="text-center hidden-xs hidden-sm"><a href="#">{{$forum->posts}}</a></td>
                   <td class="hidden-xs hidden-sm">by <a href="#">John Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
