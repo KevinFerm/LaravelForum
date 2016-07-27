@@ -28,8 +28,8 @@ Route::delete('forum/topic/delete/{id}', 'TopicController@deleteTopic');
 Route::patch('forum/topic/edit/{id}', 'TopicController@editTopic');
 
 //Posts
-Route::get('/forum/post/new/{id}', 'PostController@newPost');
-Route::post('/forum/post/new/{id}', 'PostController@createPost');
+Route::get('/forum/post/new/{id}/{forumid}', 'PostController@newPost');
+Route::post('/forum/post/new', 'PostController@createPost');
 Route::delete('/forum/post/delete/{id}', 'PostController@deletePost');
 Route::patch('/forum/post/edit/{id}', 'PostController@editPost');
 

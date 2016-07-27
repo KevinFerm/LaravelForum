@@ -23,7 +23,7 @@
             <tr>
               <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
               <td>
-                <h4><a href="/forum/show/{{$topic->id}}-{{str_slug($topic->title, "-")}}">{{$topic->title}}</a><br>
+                <h4><a href="/forum/topic/{{$topic->id}}-{{str_slug($topic->title, "-")}}">{{$topic->title}}</a><br>
                   <td class="text-center hidden-xs hidden-sm"><a href="#">0</a></td>
                   <td class="text-center hidden-xs hidden-sm"><a href="#">0</a></td>
                   <td class="hidden-xs hidden-sm">by <a href="#">John Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>

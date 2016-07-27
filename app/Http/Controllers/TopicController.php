@@ -7,11 +7,25 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Auth;
 use App\Topic;
+use App\Post;
+use App\User;
 class TopicController extends Controller
 {
     //
-    public function viewTopic() {
-      return view('/topics/topic');
+    public function viewTopic($slug) {
+      $id = explode("-", $slug);
+      $id = $id[0];
+      $posts = Post::where('topic_id', $id)->paginate(15);
+      $topic = Topic::where('id', $id)->first();
+
+      foreach ($posts as $post => $value) {
+        # Adding user data to $posts variable so I can get
+        # them in the blade later
+        $user = User::where('id', $value->poster_id)->first();
+        $posts[$post]->userData = $user;
+      }
+
+      return view('/topics/topic', ['posts' => $posts, 'id' => $id, 'topic' => $topic]);
     }
 
     public function newTopic($forum_id) {
