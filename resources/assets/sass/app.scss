@@ -54,9 +54,28 @@ a:hover {
 	border: 1px solid #ccc;
 	padding-top: 5px;
 	margin-top: 5px;
-	min-height: 100pt;
+	min-height: 200pt;
 }
 
+.post-user-area {
+	background: #D6D6D6;
+	min-height: 199pt;
+	margin-top: -5px;
+	float: left;
+	display: inline-block;
+	width: 25%;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+.post-text-area {
+	min-height: 199pt;
+	margin-top: -5px;
+	padding-left: 5px;
+	float: right;
+	display: inline-block;
+	width: 75%;
+}
 
 .topbar a:link, .topbar a:visited, .topbar a:active {
 	color: #A5CBCC;

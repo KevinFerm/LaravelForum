@@ -7,8 +7,13 @@
 
   @foreach($posts as $post)
     <div class="post">
+    <div class="post-user-area">
+    test
+    </div>
+    <div class="post-text-area">
     <br>{{$post->subject}} <br> <br>
     {!! $post->text !!}
+    </div>
     </div>
   @endforeach
 
