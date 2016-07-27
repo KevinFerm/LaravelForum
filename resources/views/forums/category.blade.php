@@ -32,6 +32,8 @@
         @endforeach
       </tbody>
     </table>
+
+{{ $topics->links() }}
   </div>
 
 </div>

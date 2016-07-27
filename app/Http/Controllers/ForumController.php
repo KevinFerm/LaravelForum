@@ -23,7 +23,7 @@ class ForumController extends Controller
     $id = $id[0];
     $forum = Forum::getForumById($id);
     if(isset($forum[0])) {
-      $topics = Topic::getTopics($id);
+      $topics = Topic::where('forum_id', $id)->paginate(1);
       $cat = Forum::getForumById($forum[0]->cat_id);
       return view('forums/category', ['id' => $id, 'topics' => $topics, 'category' => $cat, 'forum' => $forum[0]]);
     }
