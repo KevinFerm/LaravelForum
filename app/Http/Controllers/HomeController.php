@@ -21,6 +21,16 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function profile($id='none') {
+        if($id=='none') {
+            return view('profile', ['user' => Auth::user()]);
+        } else {
+            $s = explode("-", $id);
+            $s = $s[0];
+            return view('profile', ['user' => User::where('id', $s)->first()]);
+        }
+    }
+
     /**
      * Show the application dashboard.
      *

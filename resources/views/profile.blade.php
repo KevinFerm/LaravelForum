@@ -13,6 +13,10 @@
                     @if(UserLib::isAdmin(Auth::user()->id))
                       You are admin!
                     @endif
+                    <br>
+                    {{$user->username}} <br>
+                    {{$user->posts}}
+                    {{$user->id}}
                 </div>
             </div>
         </div>
