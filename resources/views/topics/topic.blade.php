@@ -6,7 +6,8 @@
   <h1>{{$topic->title}}</h1> <br>
   <h4><b>Author: </b><a href="/profile/{{$poster->id}}-{{$poster->username}}">{{$poster->username}}</a></h4>
   <a class="white" href="/forum/post/new/{{$id}}/{{$topic->forum_id}}" style="float: right;">{{Form::button('New Post', ['class' => 'btn-xlarge'])}}</a> {{ $posts->links() }}
-  @foreach($posts as $post)
+  @foreach($posts as $key => $post)
+    <div class="post-info-bar"><p class="left">{{$post->created_at}}</p><p class="right">#{{$key+1}}</p></div>
     <div class="post">
     <div class="post-user-area">
     <h3><a href="/profile/{{$post->userData->id}}-{{$post->userData->username}}">{{$post->userData->username}}</a></h3>
@@ -32,6 +33,15 @@
     <div class="post-text-area">
     <br>{{$post->subject}} <br> <br>
     {!! $post->text !!}
+    </div>
+
+    <div class="post-status-bar">
+      @if(Auth::user()->id == $post->poster_id)
+      <p class="left">
+      <a href="/forum/edit/post/{{$post->id}}">Edit Post</a> |
+      <a href="/forum/delete/post/{{$post->id}}">Delete Post</a>
+      </p>
+      @endif
     </div>
     </div>
   @endforeach

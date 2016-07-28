@@ -12,6 +12,10 @@ use App\Http\Requests;
 class PostController extends Controller
 {
     //
+      public function __construct()
+    {
+        $this->middleware('auth');
+    }
   public function newPost($topic_id, $forum_id) {
       return view('/posts/create', ['topic_id' => $topic_id, 'forum_id' => $forum_id]);  }
 

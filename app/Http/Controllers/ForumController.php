@@ -13,6 +13,10 @@ use App\Http\Requests;
 
 class ForumController extends Controller
 {
+      public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
   public function index() {
     return view('forums/index', ['categories' => Forum::getCategories(), 'forums' => Forum::getForums()]);

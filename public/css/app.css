@@ -36,15 +36,19 @@ a:hover {
   text-decoration: none;
   font-weight: bold; }
 
+div {
+  margin: 0;
+  padding: 0; }
+
 .post {
   background: #E7E7E7;
   border: 1px solid #ccc;
+  border-top: 0;
+  margin-bottom: 15px;
   padding-top: 15px;
-  margin-top: 15px;
   min-height: 250pt;
   position: relative;
-  overflow: hidden;
-  padding-bottom: 15px; }
+  overflow: hidden; }
 
 .post-user-area {
   min-height: 249pt;
@@ -62,11 +66,30 @@ a:hover {
   font-size: 16px;
   line-height: normal; }
 
+.post-info-bar {
+  height: 25pt;
+  width: 100%;
+  float: left;
+  background: #4A4A4A;
+  color: #fff;
+  display: inline-block;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow: hidden;
+  border: 1px solid #ccc; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
 .button {
   color: #fff !important; }
 
 .post-text-area {
-  height: 100%;
+  height: 90%;
   margin-top: -5px;
   padding-left: 15px;
   padding-bottom: 1500px;
@@ -77,6 +100,25 @@ a:hover {
   border-left: 1px solid #ccc;
   position: relative;
   width: 75%; }
+
+.post-status-bar {
+  height: 15pt;
+  width: 100%;
+  background: #4A4A4A;
+  color: #4D7FFF;
+  position: relative;
+  padding-left: 5px;
+  float: right;
+  overflow: hidden;
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  margin-top: -5px; }
+
+.post-status-bar a {
+  color: #fff; }
+
+.post-status-bar a:hover {
+  color: #6A6A6A; }
 
 .post-user-area h3 {
   margin-top: 0px;
