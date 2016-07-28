@@ -30,7 +30,7 @@ class TopicController extends Controller
         $posts[$post]->userData = $user;
       }
 
-      return view('/topics/topic', ['posts' => $posts, 'id' => $id, 'topic' => $topic, 'poster' => $poster]);
+      return view('/topics/topic', ['posts' => $posts, 'id' => $id, 'topic' => $topic, 'poster' => $poster, 'topic_id' => $topic->id, 'forum_id' => $topic->forum_id]);
     }
 
     public function newTopic($forum_id) {
