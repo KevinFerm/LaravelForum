@@ -39,7 +39,6 @@
 
 
 a:link, a:visited, a:active {
-	color: #22464D;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -52,29 +51,85 @@ a:hover {
 .post {
 	background: #E7E7E7;
 	border: 1px solid #ccc;
-	padding-top: 5px;
-	margin-top: 5px;
-	min-height: 200pt;
+	padding-top: 15px;
+	margin-top: 15px;
+	min-height: 250pt;
+	position:relative;
+	overflow:hidden;
+	padding-bottom: 15px;
 }
 
 .post-user-area {
-	background: #D6D6D6;
-	min-height: 199pt;
+	min-height: 249pt;
 	margin-top: -5px;
 	float: left;
 	display: inline-block;
 	width: 25%;
-	border-bottom: 1px solid #ccc;
-	border-right: 1px solid #ccc;
+	position: relative;
 }
 
+.white {
+	color: #fff;
+}
+.btn-xlarge {
+    padding: 10px 18px;
+    font-size: 16px; //change this to your desired size
+    line-height: normal;
+}
+
+.button {
+	color: #fff !important;
+}
 .post-text-area {
-	min-height: 199pt;
+	height: 100%;
 	margin-top: -5px;
-	padding-left: 5px;
+	padding-left: 15px;
+  padding-bottom: 1500px;
+  margin-bottom: -1500px;
+  padding-right: 15px;
 	float: right;
 	display: inline-block;
+	border-left: 1px solid #ccc;
+	position: relative;
 	width: 75%;
+}
+
+.post-user-area h3 {
+	margin-top: 0px;
+	text-align: center;
+}
+
+.user-avatar {
+	height: 150pt;
+	background: #fff;
+	width: 75%;
+	float: none;
+	    display: flex;
+    justify-content: center; /* for horizontal alignment */
+    align-items: center; /* for vertical alignment */
+	margin: 0 auto;
+}
+
+dl {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+dt {
+  float: left;
+  width: 50%;
+	text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+dd {
+  float: left;
+  width: 50%;
+  padding: 0;
+  margin: 0;
 }
 
 .topbar a:link, .topbar a:visited, .topbar a:active {

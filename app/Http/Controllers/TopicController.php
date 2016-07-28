@@ -15,8 +15,9 @@ class TopicController extends Controller
     public function viewTopic($slug) {
       $id = explode("-", $slug);
       $id = $id[0];
-      $posts = Post::where('topic_id', $id)->paginate(15);
+      $posts = Post::where('topic_id', $id)->paginate(8);
       $topic = Topic::where('id', $id)->first();
+      $poster = User::where('id', $topic->poster_id)->first();
 
       foreach ($posts as $post => $value) {
         # Adding user data to $posts variable so I can get
@@ -25,7 +26,7 @@ class TopicController extends Controller
         $posts[$post]->userData = $user;
       }
 
-      return view('/topics/topic', ['posts' => $posts, 'id' => $id, 'topic' => $topic]);
+      return view('/topics/topic', ['posts' => $posts, 'id' => $id, 'topic' => $topic, 'poster' => $poster]);
     }
 
     public function newTopic($forum_id) {
