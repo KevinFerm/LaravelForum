@@ -2,24 +2,21 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                    {{Auth::user()->type}}
-                    @if(UserLib::isAdmin(Auth::user()->id))
-                      You are admin!
-                    @endif
-                    <br>
-                    {{$user->username}} <br>
-                    {{$user->posts}}
-                    {{$user->id}}
-                </div>
-            </div>
-        </div>
+  <div class="profile">
+    <div class="user">
+      <div class="basic">
+        <div class="icon"><i class="fa fa-user"></i></div>
+        <div class="name"><span>{{$user->username}}</span></div>
+      </div>
+      <div class="stats">
+        <div class="item"><span>Posts</span><span class="val">{{$user->posts}}</span></div>
+        <div class="item"><span>Name</span><span class="val">{{$user->name}}</span></div>
+      </div>
     </div>
+    <div class="info">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+  </div>
 </div>
 @endsection

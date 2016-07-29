@@ -236,4 +236,120 @@ ul.toplinks {
   max-width: 400px;
   float: left; }
 
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.profile {
+  position: relative;
+  width: 100%;
+  height: 500pt;
+  padding: 10px;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.user {
+  width: 100%;
+  height: 200px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: solid 2px #D3CBBD;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap; }
+
+.user .basic {
+  margin-left: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  position: relative;
+  height: 100%;
+  width: 140px;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap; }
+
+.user .basic .name {
+  font: 100 30px Comfortaa;
+  text-transform: uppercase;
+  color: #000;
+  text-align: center; }
+
+.user .basic .icon {
+  text-align: center;
+  color: #000;
+  font-size: 90px;
+  background: #403D3C;
+  width: 140px;
+  height: 140px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100px; }
+
+.user .stats {
+  height: 100%;
+  width: 400px;
+  padding: 10px 10px;
+  color: #000;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: Montserrat;
+  text-transform: uppercase; }
+
+.stats .item {
+  width: 100%;
+  height: 20px; }
+  .stats .item .val {
+    float: right;
+    text-decoration: underline; }
+
+.info {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .info .left {
+    width: 50%;
+    position: relative;
+    height: 100%; }
+  .info .right {
+    width: 50%;
+    height: 100%;
+    background: #EB5937; }
+
 /*# sourceMappingURL=app.css.map */

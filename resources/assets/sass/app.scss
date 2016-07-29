@@ -262,3 +262,119 @@ ul.toplinks {
 	max-width: 400px;
 	float: left;
 }
+
+//Profilestuff
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+
+$a: #1C1919;
+$b: #403D3C;
+$c: #D3CBBD;
+$d: #EB5937;
+$e: #456F74;
+
+
+.profile {
+  position: relative;
+  width: 100%;
+  height: 500pt;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 2px $c;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+
+.user .basic {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  height: 100%;
+  width: 140px;
+  flex-flow: column nowrap;
+}
+
+.user .basic .name {
+  font: 100 30px Comfortaa;
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+}
+
+.user .basic .icon {
+  text-align: center;
+  color: #000;
+  font-size: 90px;
+  background: $b;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+}
+
+.user .stats {
+  height: 100%;
+  width: 400px;
+  padding: 10px 10px;
+  color: #000;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column nowrap;
+  justify-content: center;
+  font-family: Montserrat;
+  text-transform: uppercase;
+}
+
+.stats .item {
+  width: 100%;
+  height: 20px;
+  .val {
+    float: right;
+    text-decoration: underline;
+  }
+}
+
+.info {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  .left {
+    width: 50%;
+    position: relative;
+    height: 100%;
+  }
+  .right {
+    width: 50%;
+    height: 100%;
+    background: $d;
+  }
+}
