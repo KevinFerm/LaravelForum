@@ -9,7 +9,7 @@
   <div class="post">
     <div class="post-user-area">
       <h3><a href="/profile/{{$post->userData->id}}-{{$post->userData->username}}">{{$post->userData->username}}</a></h3>
-      <a class="user-avatar" href="/profile/{{$post->userData->id}}-{{$post->userData->username}}">sup</a>
+      <a class="user-avatar hidden-xs hidden-sm" href="/profile/{{$post->userData->id}}-{{$post->userData->username}}">sup</a>
       <dl>
         <dt>Posts: </dt>
         <dd>{{$post->userData->posts}}</dd>
