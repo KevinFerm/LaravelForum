@@ -19,6 +19,8 @@ Route::get('/profile', 'HomeController@profile');
 Route::get('/profile/{id}', 'HomeController@profile');
 Route::get('/admin', 'HomeController@admin');
 
+Route::post('/profile/edit', 'HomeController@editProfile');
+
 Route::get('/forum/show/{slug}', 'ForumController@viewForum');
 
 //Topics
