@@ -11,6 +11,7 @@
       <div class="stats">
         <div class="item"><span>Posts</span><span class="val">{{$user->posts}}</span></div>
         <div class="item"><span>Name</span><span class="val">{{$user->name}}</span></div>
+        <div class="item"><span>Registered</span><span class="val">{{$user->created_at->diffForHumans()}}</span></div>
       </div>
     </div>
     <div class="info">
