@@ -12,11 +12,15 @@
         <div class="item"><span>Posts</span><span class="val">{{$user->posts}}</span></div>
         <div class="item"><span>Name</span><span class="val">{{$user->name}}</span></div>
         <div class="item"><span>Registered</span><span class="val">{{$user->created_at->diffForHumans()}}</span></div>
+        <div class="item"><span>Location</span><span class="val">{{$user->location}}</span></div>
+        <div class="item"><span>Email</span><span class="val">{{$user->email}}</span></div>
+        <div class="item"><span>Registered</span><span class="val">{{$user->type}}</span></div>
       </div>
     </div>
     <div class="info">
-      <div class="left"></div>
-      <div class="right"></div>
+    @if($user->id == Auth::user()->id)
+        @include('_profile-edit')
+    @endif
     </div>
   </div>
 </div>
