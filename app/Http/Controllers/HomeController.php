@@ -9,6 +9,9 @@ use Auth;
 use App\Forum;
 use App\User;
 use App\Topic;
+use Input;
+use Validator;
+use Redirect;
 class HomeController extends Controller
 {
     /**
@@ -30,6 +33,38 @@ class HomeController extends Controller
             return view('profile', ['user' => User::where('id', $s)->first()]);
         }
     }
+
+    public function editProfile(Request $request) {
+            $avatar = $request->input('avatar');
+            $file = array('avatar' => $avatar);
+            // setting up rules
+            $rules = array('avatar' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+             // doing the validation, passing post data, rules and the messages
+            $validator = Validator::make($file, $rules);
+            if($validator->fails())
+                return $validator->errors()->all();
+
+            if (Input::file('avatar')->isValid()) {
+                $imgname = Auth::user()->id .'.'. $avatar->getClientOriginalExtension();
+                $avatar->move(base_path(). '/public/images/avatars', $imgname);
+              // sending back with message
+            $set = User::where('id', Auth::user()->id)->update([
+                'name' => $request->input('name'),
+                'location' => $request->input('location'),
+                'avatar' => $imgname
+                ]);
+              Session::flash('success', 'Upload successfully');
+              return redirect('/profile');
+            }
+            return redirect('/');
+
+            #$set = User::where('id', Auth::user()->id)->update([
+             #   'name' => $request->input('name'),
+              #  'location' => $request->input('location')
+               # ]);
+            return redirect('/profile');
+        }
+
 
     /**
      * Show the application dashboard.
