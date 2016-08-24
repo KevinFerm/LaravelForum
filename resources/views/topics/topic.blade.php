@@ -37,6 +37,6 @@
   </div>
   @endforeach
   {{ $posts->links() }}
-  @include('posts/_quickreply') <br><br><br>
+  {{-- @include('posts/_quickreply') --}}<br><br><br>
 </div>
 @endsection
